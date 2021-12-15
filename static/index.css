@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+  background: #f1f1f1;
+}
+header {
+  width: 100%;
+  height: 12vh;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 10px gainsboro;
+}
+header nav a {
+  font-weight: 600;
+  font-size: 25px;
+  /* text-shadow: 0 10px 10px #000; */
+  position: relative;
+  display: block;
+  /* font-family: 'Nothing You Could Do'; */
+}
+header nav a img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+}
+#home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#home h1{
+    font-family: "Nothing You Could Do";
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+}
+#home p{
+    text-align: center;
+    font-size: 18px;
+    padding: 0 30px;
+}
+#home .image{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home .image img{
+    filter: invert(30%);
+    pointer-events: none;
+    width: 90%;
+}
+#home .arrow-down{
+    width: 100%;
+    text-align: center;
+}
+#home .arrow-down i{
+    border: 1px solid #f1f1f1;
+    padding: 10px 13px;
+    border-radius: 50%;
+    animation: arrow infinite 2s;
+    cursor: pointer;
+}
+@keyframes arrow {
+    0%{
+        border: 1px solid #f1f1f1;
+    }
+    50%{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    100%{
+        border: 1px solid #f1f1f1;
+    }
+}
+#form{
+    width: 100%;
+    height: 50vh;
+    background: rgb(51, 51, 51);
+}
+#form h1{
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+}
+#form .btn-login {
+    text-align: center;
+    margin: 40px 0;
+}
+#form .btn-login a{
+    color: #fff;
+    background: linear-gradient(90deg,rgb(253, 0, 0), rgb(255, 166, 0), rgb(255, 208, 0));
+    padding: 10px 30px;
+    font-size: 22px;
+}
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+}

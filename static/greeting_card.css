@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+    overflow: hidden;
+}
+#greeting-card{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url("./images/img2.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+/* .fa-snowflake{
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    animation: snow 10s linear infinite forwards;
+}
+@keyframes snow {
+    to{
+        transform: translateY(100vh);
+    }
+} */
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	text-align: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url("./images/img1.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.fa-snowflake {
+	color: #fff;
+	position: absolute;
+	top: -20px;
+	animation: fall linear forwards;
+    z-index: -1;
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(105vh);
+	}
+}
+.content{
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    padding: 30px;
+}
+
+.content .from{
+    text-align: start;
+}
+.content .to{
+    text-align: end;
+    position: relative;
+    top: 20%;
+    left: 60px;
+}
+.content .to div{
+    display: inline-block;
+    text-align: start;
+}
+.content div{
+    margin: 30px;
+}
+.content h1{
+    text-transform: uppercase;
+    /* font-family: "Nothing You Could Do"; */
+}
+.content .from h3{
+    font-family: "Nothing You Could Do";
+    padding: 10px 40px;
+}
+.content .to h3{
+    font-family: "Nothing You Could Do";
+    padding: 10px 40px;
+}
+.content p{
+    font-family: "Nothing You Could Do";
+    position: relative;
+    top: 15%;
+    text-align: start;
+    
+}

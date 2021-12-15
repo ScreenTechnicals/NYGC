@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nothing+You+Could+Do&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Greeting Card</title>
+    <link rel="stylesheet" href="{% static 'greeting_card.css' %}">
+</head>
+<body>
+    <div class="content">
+        <div class="from">
+            <h1>from</h1>
+            <h3>{{greeting.sender}}</h3>
+        </div>
+        <p>{{greeting.greeting_message}}</p>
+        <div class="to">
+            <div>
+                <h1>to</h1>
+                <h3>{{greeting.reciver}}</h3>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const body = document.body;
+setInterval(createSnowFlake, 50);
+
+
+function createSnowFlake() {
+	const snow_flake = document.createElement('i');
+	snow_flake.classList.add('fas');
+	snow_flake.classList.add('fa-snowflake');
+	snow_flake.style.left = Math.random() * (window.innerWidth - 20) + 'px';
+	snow_flake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2 - 5 seconds
+	snow_flake.style.opacity = Math.random();
+	snow_flake.style.fontSize = Math.random() * 5 + 5 + 'px';
+	
+	document.body.appendChild(snow_flake);
+	
+	setTimeout(() => {
+		snow_flake.remove();
+	}, 5000)
+}
+</script>
+</body>
+</html>

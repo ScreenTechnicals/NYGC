@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nothing+You+Could+Do&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>New Year Greeting Card</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <style>
+        #signup{
+            width: 100%;
+            height: 100vh;
+            padding: 30px;
+            text-align: center;
+        }
+        #signup p{
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        #signup form{
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            text-align: start;
+        }
+        #signup form div{
+            margin: 20px 0;
+        }
+        #signup form div label{
+            display: block;
+        }
+        #signup form div input{
+            border: none; 
+            outline: none;
+            border-bottom: 1px solid #000;
+            width: 100%;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+        #signup form div button{
+            border: none;
+            outline: none;
+            background: red;
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #signup form div p{
+            font-weight: normal;
+            font-size: 18px;
+            text-align: center;
+        }
+        #signup form div p a{
+            text-decoration: underline;
+            color: blueviolet;
+        }
+        #dashboard{
+            width: 100%;
+            height: 100vh;
+            padding: 30px;
+        }
+        #dashboard h2{
+            text-align: center;
+            padding: 30px;
+            padding-top: 10px;
+            text-transform: uppercase;
+        }
+        #dashboard h3{
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        #dashboard > form{
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+        }
+        #dashboard form div{
+            margin: 20px 0;
+        }
+        #dashboard form div label{
+            display: block;
+        }
+        #dashboard form div input, #dashboard form div textarea{
+            outline: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #dashboard form div button{
+            border: none;
+            outline: none;
+            background: red;
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #dashboard h3 button{
+            border: none;
+            outline: none;
+            padding: 5px 30px;
+            background: rgb(0, 255, 85);
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #dashboard h3 form button:hover{
+            background: red;
+        }
+        .all_greets{
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: scroll;
+            background: #000;
+            color: #fff;
+        }
+        .all_greets li{
+            list-style: none;
+            margin: 10px 0;
+        }
+        .all_greets li a{
+            display: block;
+            background: #fff;
+            width: 100%;
+            padding: 10px 30px;
+        }
+        .all_greets li a:hover{
+            background: rgb(255, 230, 0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">
+                <img src="{% static 'images/logo.svg' %}" alt="">
+                NYGC
+            </a>
+        </nav>
+    </header>
+    {% block body %}{% endblock body %}
+    <footer>
+        <p>All Rights Reserved &copy NYGC - SCREEN TECHNICALS </p>
+    </footer>
+</body>
+</html>

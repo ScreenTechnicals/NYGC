@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<section id="home">
+    <h1>Welcome To NYGC World</h1>
+    <p>Create Your New Year Greeting Card Today</p>
+    <div class="image">
+        <img src="{% static 'images/Renna.svg' %}" alt="">
+    </div>
+    <div class="arrow-down">
+        <a href="#form"><i class="fas fa-caret-down"></i></a>
+    </div>
+</section>
+<section id="form">
+    <h1>Create your free account Today</h1>
+    <div class="btn-login">
+        <a href="/signup/">Create Account</a>
+    </div>
+</section>
+{% endblock body %}

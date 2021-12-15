@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<section id="dashboard">
+    <h2>welcome to the dashboard</h2>
+    <h3>Hey, {{request.user.username}}</h3>
+    <h3>
+        <form action="/logout/" method="POST">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </h3>
+    <form action="/dashboard/" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="sender">From:</label>
+            <input type="text" name="sender" id="sender">
+        </div>
+        <div>
+            <label for="reciver">To:</label>
+            <input type="text" name="reciver" id="reciver">
+        </div>
+        <div>
+            <input type="text" name="user_id" id="user_id" value="{{request.user.id}}" style="display:none;">
+        </div>
+        <div>
+            <label for="greeting_message">Greeting Message:</label>
+            <textarea name="greeting_message" id="greeting_message" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</section>
+<section class="all_greets">
+    <h1>All Your Greets</h1>
+    <div class="box">
+        <ul>
+            {% for greet in greeting_cards %}
+                <li>
+                    <a href="/greeting_card/{{request.user.id}}/{{greet.id}}/">{{greet.reciver}} | {{greet.datetime}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock body %}
