@@ -32,15 +32,19 @@
     </form>
 </section>
 <section class="all_greets">
+    {% if greeting_cards %}
     <h1>All Your Greets</h1>
     <div class="box">
         <ul>
             {% for greet in greeting_cards %}
-                <li>
-                    <a href="/greeting_card/{{request.user.id}}/{{greet.id}}/">{{greet.reciver}} | {{greet.datetime}}</a>
-                </li>
+            <li>
+                <a href="/greeting_card/{{request.user.id}}/{{greet.id}}/">{{greet.reciver}} | {{greet.datetime}}</a>
+            </li>
             {% endfor %}
         </ul>
     </div>
+    {% else %}
+    <h1>No Cards Created Yeat</h1>
+    {% endif %}
 </section>
 {% endblock body %}
