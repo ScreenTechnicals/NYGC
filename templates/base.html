@@ -142,9 +142,48 @@
         .all_greets li a:hover{
             background: rgb(255, 230, 0);
         }
+        .message{
+            width: 100%;
+            position: relative;
+        }
+        .message .msg{
+            width: 100%;
+            padding: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 9999;
+        }
+        .message .success{
+            background: rgb(0, 218, 0);
+        }
+        .message .warning{
+            background: red;
+            color: #fff;
+        }
+        .message .msg i{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="message">
+        {% if messages %}
+            {% for message in messages %}
+                <div {% if message.tags %} class="{{message.tags}} msg" {% endif %}>
+                    <i class="fas fa-times"></i>
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <header>
         <nav>
             <a href="/">
@@ -157,5 +196,14 @@
     <footer>
         <p>All Rights Reserved &copy NYGC - SCREEN TECHNICALS </p>
     </footer>
+    <script>
+        const close = document.querySelector('.fa-times');
+        const msg = document.querySelector('.msg');
+        console.log(close);
+        close.addEventListener("click", function(){
+            msg.style.display = "none";
+        });
+
+    </script>
 </body>
 </html>

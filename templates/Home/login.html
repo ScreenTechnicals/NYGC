@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<section id="signup">
+    <p>Please Fill The Details Mentioned Below</p>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="user_name">Userename:</label>
+            <input type="text" name="user_name" id="user_name" required>
+        </div>
+
+        <div>
+            <label for="password">Create Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        <div><p>Don't have an account! <a href="/signup/">SignUp</a></p></div>
+    </form>
+</section>
+{% endblock body %}

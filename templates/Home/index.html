@@ -12,9 +12,16 @@
     </div>
 </section>
 <section id="form">
-    <h1>Create your free account Today</h1>
-    <div class="btn-login">
-        <a href="/signup/">Create Account</a>
-    </div>
+    {% if request.user.is_authenticated %}
+        <h1>Go To Your Dashboard</h1>
+        <div class="btn-login">
+            <a href="/dashboard/">Go To Dashboard</a>
+        </div>
+    {% else %}
+        <h1>Create your free account Today</h1>
+        <div class="btn-login">
+            <a href="/signup/">Create Account</a>
+        </div>
+    {% endif %}
 </section>
 {% endblock body %}
